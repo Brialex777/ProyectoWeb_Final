@@ -15,7 +15,7 @@ class ProductoController extends Controller
     public function index()
     {
         $productos = Producto::all();
-        return view('productos/productosIndex', compact('productos'));
+        return view('/productos/productoIndex', compact('productos'));
     }
 
     /**
@@ -24,7 +24,7 @@ class ProductoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(){
-        return view('productos/productosCreate');
+        return view('/productos/productoCreate');
     }
 
     /**
@@ -54,7 +54,7 @@ class ProductoController extends Controller
      */
     public function show(Producto $producto)
     {
-        //
+        return view('/productos/productoShow', compact('producto'));
     }
 
     /**

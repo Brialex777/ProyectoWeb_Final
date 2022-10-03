@@ -9,6 +9,7 @@
 <body>
     <h1>Lista de Productos</h1>
 
+    <a href="/producto/create">Crear Productos</a>
     <table border = 1>
         <tr>
             <th>Nombre</th>
@@ -17,7 +18,11 @@
         </tr>
         @foreach ($productos as $producto)
             <tr>
-                <td>{{ $producto->nombre }}</td>
+                <td>
+                    <a href="/producto/{{ $producto -> id }}">
+                        {{ $producto->nombre }}
+                    </a>
+                </td>
                 <td>{{ $producto->precio }}</td>
                 <td>{{ $producto->cantidad }}</td>
             </tr>

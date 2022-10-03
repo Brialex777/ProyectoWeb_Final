@@ -7,10 +7,11 @@
     <title>Formulario</title>
 </head>
 <body>
-    <h1>Create Form</h1>
+    <h1>Crear Producto</h1>
+    <a href="/producto">Pagina Principal</a>
     <form action="/producto" method="POST">
         @csrf
-        
+
         <label for="nombre">Nombre:</label><br>
         <input type="text" name="nombre" id="name"><br>
 
