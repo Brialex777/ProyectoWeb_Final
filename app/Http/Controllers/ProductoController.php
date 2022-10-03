@@ -14,7 +14,8 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        $productos = Producto::all();
+        return view('productos/productosIndex', compact('productos'));
     }
 
     /**
@@ -22,10 +23,8 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        
-        return view('form');
+    public function create(){
+        return view('productos/productosCreate');
     }
 
     /**
@@ -36,7 +35,15 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request -> validate([
+            'nombre' => 'required|max:150',
+            'cantidad' => 'integer|min:0',
+            'precio' => 'numeric|required|min:0'
+        ]);
+
+        Producto::create($request->all());
+        
+        return redirect('/producto');
     }
 
     /**

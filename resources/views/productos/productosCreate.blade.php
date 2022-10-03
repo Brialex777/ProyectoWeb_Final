@@ -7,15 +7,18 @@
     <title>Formulario</title>
 </head>
 <body>
-    <form action="producto" method="post">
+    <h1>Create Form</h1>
+    <form action="/producto" method="POST">
+        @csrf
+        
         <label for="nombre">Nombre:</label><br>
-        <input type="text" name="nombre" id="name">
+        <input type="text" name="nombre" id="name"><br>
 
         <label for="precio">Precio:</label><br>
-        <input type="text" name="precio" id="cash">
+        <input type="text" name="precio" id="cash"><br>
 
         <label for="Cantidad">Cantidad:</label><br>
-        <input type="text" name="cantidad" id="quantity">
+        <input type="text" name="cantidad" id="quantity"><br>
 
         <input type="submit" value="Crear">
     </form>
