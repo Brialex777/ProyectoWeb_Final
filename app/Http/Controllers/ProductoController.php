@@ -65,7 +65,7 @@ class ProductoController extends Controller
      */
     public function edit(Producto $producto)
     {
-        //
+        return view('/productos/productoEdit', compact('producto'));
     }
 
     /**
@@ -77,7 +77,15 @@ class ProductoController extends Controller
      */
     public function update(Request $request, Producto $producto)
     {
-        //
+        $request -> validate([
+            'nombre' => 'required|max:150',
+            'cantidad' => 'integer|min:0',
+            'precio' => 'numeric|required|min:0'
+        ]);
+
+        Producto::where('id', $producto->id)->update($request->except('_token', '_method'));
+
+        return redirect('/producto');
     }
 
     /**
@@ -88,6 +96,8 @@ class ProductoController extends Controller
      */
     public function destroy(Producto $producto)
     {
-        //
+        $producto->delete();
+
+        return redirect('/producto');
     }
 }

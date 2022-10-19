@@ -15,6 +15,8 @@
             <th>Nombre</th>
             <th>Precio</th>
             <th>Cantidad</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
         </tr>
         @foreach ($productos as $producto)
             <tr>
@@ -25,6 +27,16 @@
                 </td>
                 <td>{{ $producto->precio }}</td>
                 <td>{{ $producto->cantidad }}</td>
+                <td>
+                    <a href="/producto/{{ $producto->id }}/edit">Editar</a>
+                </td>
+                <td>
+                    <form action="/producto/{{ $producto->id }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="Borrar">
+                    </form>
+                </td>
             </tr>
         @endforeach
     </table>
