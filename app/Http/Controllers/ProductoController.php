@@ -37,7 +37,7 @@ class ProductoController extends Controller
     {
         $request -> validate([
             'nombre' => 'required|max:150',
-            'cantidad' => 'integer|min:0',
+            'cantidad' => 'required|integer|min:0',
             'precio' => 'numeric|required|min:0'
         ]);
 

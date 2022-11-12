@@ -1,14 +1,14 @@
 <x-plantilla>
-       <h1>Lista de Productos</h1>
-
-    <a href="/producto/create">Crear Productos</a>
-    <table border = 1>
+    <div class="row">
+    <div class="col s12">
+    <h1>Lista de Productos</h1>
+    <table class="highlight">
         <tr>
             <th>Nombre</th>
             <th>Precio</th>
             <th>Cantidad</th>
-            <th>Editar</th>
-            <th>Eliminar</th>
+            <th></th>
+            <th></th>
         </tr>
         @foreach ($productos as $producto)
             <tr>
@@ -20,19 +20,18 @@
                 <td>{{ $producto->precio }}</td>
                 <td>{{ $producto->cantidad }}</td>
                 <td>
-                    <a href="/producto/{{ $producto->id }}/edit">Editar</a>
+                    <a href="/producto/{{ $producto->id }}/edit" class="waves-effect waves-light btn-small">Editar</a>
                 </td>
                 <td>
                     <form action="/producto/{{ $producto->id }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <input type="submit" value="Borrar">
+                        <input type="submit" value="Borrar" class="waves-effect waves-teal btn-flat red darken-1">
                     </form>
                 </td>
             </tr>
         @endforeach
     </table>
-    <ul>
-        
-    </ul>
+    </div>
+    </div>
 </x-plantilla>
