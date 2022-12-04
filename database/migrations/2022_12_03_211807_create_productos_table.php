@@ -15,7 +15,6 @@ class CreateProductosTable extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pedido_id')->constrained(); //->onDelete('cascade')
             $table->string('nombre', 150);
             $table->smallInteger('cantidad')->default(0);
             $table->decimal('precio', $precision = 8, $scale = 2);
