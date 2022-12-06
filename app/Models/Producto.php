@@ -10,7 +10,7 @@ class Producto extends Model
     use HasFactory;
 
     public $timestamps = false;
-    protected $fillable = ['detalles_orden_id', 'nombre', 'cantidad', 'precio'];
+    protected $fillable = ['nombre', 'descripcion', 'cantidad', 'precio'];
 
     public function pedidos(){
         return $this->belongsToMany(Pedido::class);

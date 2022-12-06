@@ -15,10 +15,10 @@ class ProductosSeeder extends Seeder
      */
     public function run()
     {
-        Producto::create(['nombre' => 'Joya_1', 'cantidad' => 10, 'precio' => 250.00]);
-        Producto::create(['nombre' => 'Joya_2', 'cantidad' => 2, 'precio' => 99.99]);
-        Producto::create(['nombre' => 'Joya_3', 'cantidad' => 5, 'precio' => 150.70]);
-        Producto::create(['nombre' => 'Joya_4', 'cantidad' => 14, 'precio' => 755.90]);
-        Producto::create(['nombre' => 'Joya_5', 'cantidad' => 9, 'precio' => 299.00]);
+        Producto::create(['nombre' => 'Joya_1', 'descripcion' => 'Descripcion de Joya_1', 'cantidad' => 10, 'precio' => 250.00]);
+        Producto::create(['nombre' => 'Joya_2', 'descripcion' => 'Descripcion de Joya_2', 'cantidad' => 2, 'precio' => 99.99]);
+        Producto::create(['nombre' => 'Joya_3', 'descripcion' => 'Descripcion de Joya_3', 'cantidad' => 5, 'precio' => 150.70]);
+        Producto::create(['nombre' => 'Joya_4', 'descripcion' => 'Descripcion de Joya_4', 'cantidad' => 14, 'precio' => 755.90]);
+        Producto::create(['nombre' => 'Joya_5', 'descripcion' => 'Descripcion de Joya_5', 'cantidad' => 9, 'precio' => 299.00]);
     }
 }

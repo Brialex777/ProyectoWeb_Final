@@ -16,6 +16,7 @@ class CreateProductosTable extends Migration
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre', 150);
+            $table->string('descripcion', 250);
             $table->smallInteger('cantidad')->default(0);
             $table->decimal('precio', $precision = 8, $scale = 2);
         });

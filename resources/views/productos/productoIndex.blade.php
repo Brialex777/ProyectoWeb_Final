@@ -5,20 +5,22 @@
     <table class="highlight">
         <tr>
             <th>Nombre</th>
+            <th>Descripción</th>
             <th>Precio</th>
             <th>Cantidad</th>
+            <th></th>
             <th></th>
             <th></th>
         </tr>
         @foreach ($productos as $producto)
             <tr>
-                <td>
-                    <a href="/producto/{{ $producto -> id }}">
-                        {{ $producto->nombre }}
-                    </a>
-                </td>
+                <td>{{ $producto->nombre }}</td>
+                <td>{{ $producto->descripcion }}</td>
                 <td>{{ $producto->precio }}</td>
                 <td>{{ $producto->cantidad }}</td>
+                <td>
+                    <a href="/producto/{{ $producto->id }}" class="waves-effect waves-light btn-small">Ver Detalles</a>
+                </td>
                 <td>
                     <a href="/producto/{{ $producto->id }}/edit" class="waves-effect waves-light btn-small">Editar</a>
                 </td>

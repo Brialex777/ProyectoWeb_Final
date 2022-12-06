@@ -11,8 +11,8 @@
     <nav>
         <div class="nav-wrapper teal accent-4">
             <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="/producto">Lista de productos</a></li>
-                <li><a href="/producto/create">Crear Producto</a></li>
+                <li class="active"><a href="/producto">Lista de productos</a></li>
+                <li class="active"><a href="/producto/create">Crear Producto</a></li>
             </ul>
         </div>
     </nav>

@@ -9,6 +9,10 @@
                     <td><h4>{{ $producto->nombre }}</h4></td>
                 </tr>
                 <tr>
+                    <td><h4>Descripción:</h4></td>
+                    <td><h4>{{ $producto->descripcion }}</h4></td>
+                </tr>
+                <tr>
                     <td><h4>Precio:</h4></td>
                     <td><h5>{{ $producto->precio }}</h5></td>
                 </tr>
