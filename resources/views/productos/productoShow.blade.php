@@ -1,5 +1,5 @@
 <x-plantilla>
-    <h1>Detalles del producto</h1>
+    <h1 class="center-align">Detalles del producto</h1>
 
     <div style="width:35vw;margin: 0 auto;">
         <table class="striped">
