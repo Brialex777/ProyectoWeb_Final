@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Producto;
 use Illuminate\Http\Request;
+use App\Models\Archivo;
 
 class ProductoController extends Controller
 {
@@ -46,7 +47,18 @@ class ProductoController extends Controller
             'precio' => 'numeric|required|min:0'
         ]);
 
-        Producto::create($request->all());
+        $producto = Producto::create($request->all());
+
+
+        if ($request->file('archivo')->isValid()){
+            $ubicacion = $request->archivo->store('productos');
+            $archivo = new Archivo();
+            $archivo->ubicacion = $ubicacion;
+            $archivo->nombre = $request->archivo->getClientOriginalName();
+            $archivo->mime = '';
+
+            $producto->archivos()->save($archivo);
+        }
         
         return redirect('/producto');
     }

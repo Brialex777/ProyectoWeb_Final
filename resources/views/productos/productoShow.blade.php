@@ -1,26 +1,32 @@
 <x-plantilla>
     <h1>Detalles del producto</h1>
 
-    <div class="row">
-        <div class="col s12">
-            <table class="striped">
-                <tr>
-                    <td><h4>Nombre del producto:</h4></td>
-                    <td><h4>{{ $producto->nombre }}</h4></td>
-                </tr>
-                <tr>
-                    <td><h4>Descripción:</h4></td>
-                    <td><h4>{{ $producto->descripcion }}</h4></td>
-                </tr>
-                <tr>
-                    <td><h4>Precio:</h4></td>
-                    <td><h5>{{ $producto->precio }}</h5></td>
-                </tr>
-                <tr>
-                    <td><h4>Cantidad:</h4></td>
-                    <td><h5>{{ $producto->cantidad }}</h5></td>
-                </tr>       
-            </table>
-        </div>
+    <div style="width:35vw;margin: 0 auto;">
+        <table class="striped">
+            <tr>
+                <td>Nombre del producto:</td>
+                <td>{{ $producto->nombre }}</td>
+            </tr>
+            <tr>
+                <td>Descripción:</td>
+                <td>{{ $producto->descripcion }}</td>
+            </tr>
+            <tr>
+                <td>Precio:</td>
+                <td>{{ $producto->precio }}</td>
+            </tr>
+            <tr>
+                <td>Cantidad:</td>
+                <td>{{ $producto->cantidad }}</td>
+            </tr> 
+            <tr>
+                <td>Archivo:</td>
+                <td>
+                    @foreach ($producto->archivos as $archivo)
+                        <li>{{ $archivo->nombre }}</li>
+                    @endforeach
+                </td>
+            </tr>       
+        </table>
     </div>
 </x-plantilla>

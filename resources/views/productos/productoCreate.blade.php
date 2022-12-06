@@ -1,9 +1,9 @@
 <x-plantilla>
     <h1 class="center-align">Crear Producto</h1>
-    <form action="/producto" method="POST">
+    <form action="/producto" method="POST" enctype="multipart/form-data">
         @csrf
 
-        <div style="height:100vh;width:35vw;margin: 0 auto;">
+        <div style="width:35vw;margin: 0 auto;">
             <div class="input-field col s12">
                 <label for="nombre">Nombre:</label><br>
                 <input type="text" name="nombre" id="name" value="{{ old('nombre') }}">
@@ -14,8 +14,6 @@
 
             <div class="input-field col s12">
                 <label class="form-label" for="nombre">Descripción:</label><br>
-                <!--    <input type="text" name="descripcion" id="descripcion" value="{{ old('descripcion') }}">    -->
-            
                 <textarea class="materialize-textarea" id="descripcion" name="descripcion">{{ old('descripcion') }}</textarea>
                 @error('descripcion')
                 <i>{{ $message }}</i>
@@ -39,6 +37,7 @@
             </div>
 
             <input class="btn waves-effect waves-light" type="submit" value="Crear">
+            <input type="file" name="archivo" id="archivo">
         </div>
     </form>
 </x-plantilla>
